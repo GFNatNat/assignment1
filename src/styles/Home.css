@@ -1,0 +1,32 @@
+.home-container {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.home-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.home-text {
+  margin-left: 20px;
+  text-align: left;
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.image-grid {
+  margin-top: 20px;
+}
+
+.grid-image {
+  width: 80%;
+  border-radius: 5%;
+  -webkit-border-radius: 5%;
+  -moz-border-radius: 5%;
+  -ms-border-radius: 5%;
+  -o-border-radius: 5%;
+}
