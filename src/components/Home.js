@@ -24,9 +24,7 @@ const Home = () => (
       {carouselImages.map((image, index) => (
         <img key={index} src={image} alt={`Slide ${index + 1}`} className="home-banner" />
       ))}
-    </Carousel>
-    {/* <Typography variant="h4" className="home-text">Welcome to the Quiz App</Typography> */}
-    
+    </Carousel>   
     <Container>
       <Grid container spacing={2} justifyContent="center" className="image-grid">
         {gridImages.map((image, index) => (

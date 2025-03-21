@@ -10,35 +10,36 @@ const newsList = [
   { id: 5, title: 'Top salmon with a sizzling mix of aromatics and spices', description: 'Tadka is a ubiquitous South Asian technique that adds a dramatic last-minute coat of flavor.', images: 'https://i.ibb.co/ZzJdk906/event-5.jpg' },
   { id: 6, title: '80 Christmas dinner ideas for the ultimate holiday feast', description: 'Build the perfect Christmas menu with these delicious recipes.', images: 'https://i.ibb.co/Kz7ZM6yt/event-6.jpg' },
   { id: 7, title: 'How to make the easiest prime rib roast for the holidays', description: 'Use these tips and tricks to make a juicy and amazingly delicious prime rib roast.', images: 'https://i.ibb.co/LD5ynp3n/event-7.jpg' },
-  { id: 8, title: 'Turn leftover turkey into a flavorful Waldorf salad', description: 'This light, bright turkey salad is the best post-Thanksgiving lunch.', images: 'https://i.ibb.co/60VMKJ2m/event-8.jpgg' },
+  { id: 8, title: 'Turn leftover turkey into a flavorful Waldorf salad', description: 'This light, bright turkey salad is the best post-Thanksgiving lunch.', images: 'https://i.ibb.co/60VMKJ2m/event-8.jpg' },
 ];
 
 const News = () => {
   const navigate = useNavigate();
 
-  return(
-  <Container>
-    <Typography variant="h4" color="red" gutterBottom>News Category</Typography>
-    <Grid container spacing={2}>
-      {newsList.map(news => (
-        <Grid item xs={12} sm={6} md={3} key={news.id}>
-          <Card>
-            <CardMedia component="img" height="140" image={news.images} alt={news.title} />
-            <CardContent>
-              <Typography variant="h6" fontWeight="bold">{news.title}</Typography>
-              <Typography>{news.description}</Typography>
-              <Typography variant="h6">
-              <Link onClick={() => navigate(`/news/${news.id}`)} style={{ cursor: "pointer" }}>
-                {news.title}
-              </Link>
-            </Typography>
-            <Typography variant="body2">{news.content}</Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      ))}
-    </Grid>
-  </Container>
+  return (
+    <Container>
+      <Typography variant="h4" color="red" gutterBottom>News Category</Typography>
+      <Grid container spacing={2}>
+        {newsList.map(news => (
+          <Grid item xs={12} sm={6} md={3} key={news.id}>
+            <Card sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
+              <CardMedia component="img" height="140" image={news.images} alt={news.title} />
+              <CardContent sx={{ flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                <div>
+                  <Typography variant="h6" fontWeight="bold">{news.title}</Typography>
+                  <Typography variant="body2">{news.description}</Typography>
+                </div>
+                <Typography variant="h6">
+                  <Link onClick={() => navigate(`/news/${news.id}`)} style={{ cursor: "pointer" }}>
+                    {news.title}
+                  </Link>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 };
 
